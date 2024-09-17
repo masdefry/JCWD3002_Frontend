@@ -1,0 +1,15 @@
+h1{
+    background-color: antiquewhite;
+}
+
+div > span > h1{
+    background-color: red;
+}
+
+h3{
+    background-color: blueviolet !important;
+}
+
+#title{
+    background-color: aquamarine;
+}

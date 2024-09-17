@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Management</title>
+    <style>
+        table, tr, td, th{
+            border: 1px solid black;
+        }
+
+        table{
+            width: 1000px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    No. 
+                </th>
+                <th>
+                    Name 
+                </th>
+                <th>
+                    Price  
+                </th>
+                <th>
+                    Stock  
+                </th>
+                <th>
+                    Image  
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody id="table-data">
+
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script>
+    const products = [
+        {
+            name: 'Chitato', 
+            price: 15000, 
+            stock: 100, 
+            url: 'https://down-id.img.susercontent.com/file/13c32f2ce2f54fd918c094a99b3e2fb9'
+        }
+    ]
+
+    let display = ''
+
+    products.forEach((item, index) => {
+        display += `
+            <tr>
+                <td>${index+1}</td>
+                <td>${item.name}</td>
+                <td>${item.price}</td>
+                <td>${item.stock}</td>
+                <td>
+                    <center><img src="${item.url}" width="100px" height="100px" /></center>  
+                </td>
+                <td>
+                    <button>Delete <img src="" /></button>
+                </td>
+            </tr>
+        `
+    })
+
+    document.getElementById('table-data').innerHTML = display
+</script>
