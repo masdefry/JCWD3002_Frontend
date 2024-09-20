@@ -32,10 +32,13 @@ Hello, JCWD3002!
 
 
             2. Import `Routes` and `Route` at `App.jsx`
-                
+
+                    // Import Component Pages
                     import Profile from './pages/Profile';
-                    
                     import Login from './pages/Login';
+
+                    // Setup React Router DOM
+                    import { Routes, Route } from 'react-router-dom';
 
                     <Routes>
                         <Route path='/profile' element={<Profile />} />
