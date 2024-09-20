@@ -4,6 +4,8 @@ import List from './components/List';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Todo from './pages/Todo';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 import './App.css';
 
@@ -13,15 +15,9 @@ import { Routes, Route } from 'react-router-dom';
 function App(){
   return(
     <>
-      {/* <h1 id='purwadhika'>
-        Purwadhika
-      </h1>
-      <h1 style={{ color: 'blue', fontSize: '100px' }}>
-        Purwadhika
-      </h1>
-      <Child greeting='Hello'/>
-      <List activity='Futsal' /> */}
+      <Navbar />
       <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/login' element={<Login />} /> 
         <Route path='/todo' element={<Todo />} />
