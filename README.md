@@ -41,3 +41,7 @@ Hello, JCWD3002!
                         <Route path='/profile' element={<Profile />} />
                         <Route path='/login' element={<Login />} /> 
                     </Routes>
+
+- How to Setup Tailwind CSS?
+            
+            https://tailwindcss.com/docs/guides/vite
