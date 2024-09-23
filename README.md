@@ -45,3 +45,9 @@ Hello, JCWD3002!
 - How to Setup Tailwind CSS?
             
             https://tailwindcss.com/docs/guides/vite
+
+- State
+- Lifecycle Method
+- React Memo
+- useCallback
+- Network Call -> JSON Server Fake API
