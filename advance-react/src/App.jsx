@@ -5,7 +5,7 @@ import HomeClass from './pages/class';
 import { Routes, Route } from 'react-router-dom';
 import HomeFunction from './pages/function';
 import UseRef from './pages/useRef';
-import UseCallback from './pages/useCallback';
+import NetworkCall from './pages/networkCall';
 
 function App(){
   return(
@@ -14,7 +14,7 @@ function App(){
         <Route path='/home-class' element={<HomeClass />} />
         <Route path='/home-function' element={<HomeFunction />} />
         <Route path='/use-ref' element={<UseRef />} />
-        <Route path='/use-callback' element={<UseCallback />} />
+        <Route path='/network-call' element={<NetworkCall />} />
       </Routes>
     </>
   )
