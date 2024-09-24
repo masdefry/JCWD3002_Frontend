@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
+import { toast } from 'react-toastify';
 
 export default function TodoPage(){
     const [todo, setTodo] = useState([])
@@ -29,14 +30,25 @@ export default function TodoPage(){
 
     const onPostTodo = async() => {
         try {
+            if(!inputTodo.current.value || !inputTodoPlace.current.value) throw {message: 'Input Must be Filled!'}
+
             // Step-01
             const res = await axios.post('http://localhost:5000/todo', {
                 name: inputTodo.current.value, 
                 place: inputTodoPlace.current.value
             })
-            console.log(res)
+
+            inputTodo.current.value = ''
+            inputTodoPlace.current.value = ''
+            toast.success('Create Todo Success!', {
+                position: 'top-center'
+            })
+            onFetchTodo()
         } catch (error) {
-            
+            console.log(error)
+            toast.error(error.message, {
+                position: 'top-center'
+            })
         }
     }
 

@@ -10,9 +10,13 @@ import MemoPage from './pages/memo';
 import UseCallbackPage from './pages/useCallback';
 import TodoPage from './pages/todo';
 
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App(){
   return(
     <>
+      <ToastContainer />
       <Routes>
         <Route path='/home-class' element={<HomeClass />} />
         <Route path='/home-function' element={<HomeFunction />} />
