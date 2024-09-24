@@ -74,3 +74,15 @@ Hello, JCWD3002!
                 2. Use `toast.success` or `toast.error` or Any toast Method as Modern Alert
 
                         toast.success('Delete Todo Success!')
+
+- Using JSON-SERVER as Fake API 
+
+                0. Install JSON-SERVER (Install on Global/System Computer)
+
+                    npm i -g json-server
+
+                1. Create New Directory `db` and New File `db.json` Inside Your React Project 
+
+                2. Running JSON-SERVER on Your Terminal CMD. Makesure Your Terminal Already Inside `db` Directory 
+
+                    json-server --watch db.json --port 5000
