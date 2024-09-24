@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function TodoPage(){
     const [todo, setTodo] = useState([])
+    const inputTodo = useRef()
+    const inputTodoPlace = useRef()
 
     const onFetchTodo = async() => {
         try {
@@ -25,15 +27,44 @@ export default function TodoPage(){
         })
     }
 
+    const onPostTodo = async() => {
+        try {
+            // Step-01
+            const res = await axios.post('http://localhost:5000/todo', {
+                name: inputTodo.current.value, 
+                place: inputTodoPlace.current.value
+            })
+            console.log(res)
+        } catch (error) {
+            
+        }
+    }
+
     useEffect(() => {
         onFetchTodo()
     }, [])
 
     return(
         <>
-
-            <div className="overflow-x-auto">
-                <table className="table">
+            <section className='p-10'>
+                <label className='form-control w-full max-w-xs'>
+                    <div className='label'>
+                        <span className='label-text font-bold'>Input Todo:</span>
+                    </div>
+                    <input ref={inputTodo} type='text' placeholder='Type Your Todo' className='input input-bordered w-full max-w-xs' />
+                </label>
+                <label className='form-control w-full max-w-xs'>
+                    <div className='label'>
+                        <span className='label-text font-bold'>Input Place:</span>
+                    </div>
+                    <input ref={inputTodoPlace} type='text' placeholder='Type Your Todo Place' className='input input-bordered w-full max-w-xs' />
+                </label>
+                <button onClick={onPostTodo} className='btn bg-blue-500 text-white mt-3'>
+                    Create Todo 
+                </button>
+            </section>
+            <div className='overflow-x-auto'>
+                <table className='table'>
                     {/* head */}
                     <thead>
                     <tr>
@@ -49,7 +80,7 @@ export default function TodoPage(){
                     }
                     </tbody>
                 </table>
-                </div>
+            </div>
         </>
     )
 }
