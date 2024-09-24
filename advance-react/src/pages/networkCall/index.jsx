@@ -18,6 +18,8 @@ export default function NetworkCall(){
         onFetchData()
     }, [])
 
+    if(data.length === 0) return <div>Loading...</div>
+
     return(
         <>
             {
