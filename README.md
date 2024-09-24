@@ -46,8 +46,31 @@ Hello, JCWD3002!
             
             https://tailwindcss.com/docs/guides/vite
 
-- State
-- Lifecycle Method
-- React Memo
-- useCallback
-- Network Call -> JSON Server Fake API
+- How to Setup React Toastify?
+
+                0. Install
+
+                        npm i react-toastify
+
+                1. Put `ToastContainer` Component at `App.jsx'
+
+                        import {ToastContainer} from 'react-toastify';
+
+                        function App(){
+                                return(
+                                        <>
+                                        <ToastContainer />
+                                                <Routes>
+                                                ...
+                                                ...
+                                                ...
+                                                </Routes>
+                                        </>
+                                )
+                        }
+
+                        export default App
+
+                2. Use `toast.success` or `toast.error` or Any toast Method as Modern Alert
+
+                        toast.success('Delete Todo Success!')

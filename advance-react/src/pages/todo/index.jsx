@@ -23,6 +23,7 @@ export default function TodoPage(){
                     <th>{index+1}</th>
                     <td>{item.name}</td>
                     <td>{item.place}</td>
+                    <td><button onClick={() => onDeleteTodo(item.id)} className='btn bg-red-600 text-white rounded-md p-3'>Delete</button></td>
                 </tr>
             )
         })
@@ -50,6 +51,17 @@ export default function TodoPage(){
                 position: 'top-center'
             })
         }
+    }
+
+    const onDeleteTodo = async(id) => {
+       try {
+            await axios.delete(`http://localhost:5000/todo/${id}`)
+
+            toast.success('Delete Todo Success!')
+            onFetchTodo()
+       } catch (error) {
+            toast.error(error.message)
+       }
     }
 
     useEffect(() => {
@@ -83,6 +95,7 @@ export default function TodoPage(){
                         <th>No.</th>
                         <th>List</th>
                         <th>Location</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>

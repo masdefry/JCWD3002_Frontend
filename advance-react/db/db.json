@@ -1,54 +1,9 @@
 {
   "todo": [
     {
-      "id": "2002",
-      "name": "Futsal",
-      "place": "Lapangan GOP-09"
-    },
-    {
-      "id": "0176",
-      "name": "Makan",
-      "place": "Breeze"
-    },
-    {
-      "id": "f00d",
-      "name": "",
-      "place": ""
-    },
-    {
-      "id": "47f8",
-      "name": "Minum",
-      "place": "Kantin"
-    },
-    {
-      "id": "4849",
-      "name": "A",
-      "place": "B"
-    },
-    {
-      "id": "cd9a",
-      "name": "A",
-      "place": "A"
-    },
-    {
-      "id": "3949",
-      "name": "B",
-      "place": "C"
-    },
-    {
-      "id": "b631",
-      "name": "D",
-      "place": "D"
-    },
-    {
-      "id": "c28c",
-      "name": "Abc",
-      "place": "Bca"
-    },
-    {
-      "id": "08e6",
-      "name": "Abc",
-      "place": "Bca"
+      "id": "9fa7",
+      "name": "Activity-100",
+      "place": "BBB"
     }
   ],
   "activity": []
