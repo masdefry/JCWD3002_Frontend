@@ -6,6 +6,9 @@ import { Routes, Route } from 'react-router-dom';
 import HomeFunction from './pages/function';
 import UseRef from './pages/useRef';
 import NetworkCall from './pages/networkCall';
+import MemoPage from './pages/memo';
+import UseCallbackPage from './pages/useCallback';
+import TodoPage from './pages/todo';
 
 function App(){
   return(
@@ -15,6 +18,9 @@ function App(){
         <Route path='/home-function' element={<HomeFunction />} />
         <Route path='/use-ref' element={<UseRef />} />
         <Route path='/network-call' element={<NetworkCall />} />
+        <Route path='/memo' element={<MemoPage />} />
+        <Route path='/use-callback' element={<UseCallbackPage />} />
+        <Route path='/todo' element={<TodoPage />} />
       </Routes>
     </>
   )

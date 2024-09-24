@@ -11,7 +11,7 @@ export default function HomeFunction(){
     }
 
     const ChangeActivity = () => {
-        const currentActivity = [...activity] 
+        const currentActivity = [...activity]
         currentActivity.push('Ngoding') 
         setActivity(currentActivity)
     }
