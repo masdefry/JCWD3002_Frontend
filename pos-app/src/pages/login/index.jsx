@@ -1,6 +1,27 @@
 import bgLogin from '../../../public/sumup-gzlX757B2v8-unsplash.jpg'
+import { useRef } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function LoginPage() {
+  const inputUsername = useRef()
+  const inputPassword = useRef()
+
+  const onLogin = async() => {
+    try {
+      const user = await axios.get(
+        `http://localhost:5000/users?username=${inputUsername.current.value}
+        &password=${inputPassword.current.value}`
+      )
+      
+      if(user.data.length === 0) throw {message: 'Username or Password Invalid'}
+
+      toast.success('Login Success!')
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
+
   return (
     <div className='p-6 sm:p-10 lg:p-20'>
       <main className='flex flex-col lg:flex-row min-w-full h-auto lg:h-[500px] rounded-md shadow-2xl'>
@@ -22,6 +43,7 @@ function LoginPage() {
                 type='text'
                 className='grow p-2 rounded-md'
                 placeholder='Username'
+                ref={inputUsername}
               />
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -41,6 +63,7 @@ function LoginPage() {
                 type='text'
                 className='grow p-2 rounded-md'
                 placeholder='Password'
+                ref={inputPassword}
               />
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -55,7 +78,7 @@ function LoginPage() {
                 />
               </svg>
             </label>
-            <button className='btn btn-primary w-full'>Login</button>
+            <button onClick={onLogin} className='btn btn-primary w-full'>Login</button>
           </div>
         </section>
       </main>
