@@ -4,10 +4,12 @@ import LoginPage from './pages/login/index';
 import RegisterPage from './pages/register';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from './components/navbar';
 
 function App() {
   return (
     <>
+      <Navbar />
       <ToastContainer />
       <Routes>
         <Route path='/login' element={<LoginPage />} />

@@ -1,26 +1,16 @@
 import bgLogin from '../../../public/sumup-gzlX757B2v8-unsplash.jpg'
-import { useRef } from 'react';
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import useLoginHook from '../../hooks/useLoginHook';
+import Children from '../../components/children';
+import { GlobalProvider } from '../../providers/contextProvider';
+import { useContext } from 'react';
 
 function LoginPage() {
-  const inputUsername = useRef()
-  const inputPassword = useRef()
-
-  const onLogin = async() => {
-    try {
-      const user = await axios.get(
-        `http://localhost:5000/users?username=${inputUsername.current.value}
-        &password=${inputPassword.current.value}`
-      )
-      
-      if(user.data.length === 0) throw {message: 'Username or Password Invalid'}
-
-      toast.success('Login Success!')
-    } catch (error) {
-      toast.error(error.message)
-    }
-  }
+  
+  const {
+    inputUsername, 
+    inputPassword,
+    onLogin
+  } = useLoginHook()
 
   return (
     <div className='p-6 sm:p-10 lg:p-20'>
