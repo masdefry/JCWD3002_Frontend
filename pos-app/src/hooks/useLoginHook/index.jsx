@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
 
-export default function useLoginHook(setUsername){
+function useLoginHook(setUsername){
     const inputUsername = useRef()
     const inputPassword = useRef()
     const navigate = useNavigate()
@@ -15,9 +15,9 @@ export default function useLoginHook(setUsername){
             )
             
             if(user.data.length === 0) throw {message: 'Username or Password Invalid'}
-
-            toast.success('Login Success!')
-
+            console.log(user.data[0].username)
+            // toast.success('Login Success!')
+            setUsername(user.data[0].username)
             navigate('/register')
         } catch (error) {
         toast.error(error.message)
@@ -30,3 +30,5 @@ export default function useLoginHook(setUsername){
         onLogin
     }
 }
+
+export default useLoginHook

@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom';
 
 // Import contextProvider
-import {ContextProvider} from './providers/contextProvider.jsx';
+import {ContextProvider} from './providers/ContextProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>

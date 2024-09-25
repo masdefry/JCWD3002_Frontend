@@ -5,13 +5,15 @@ import { GlobalProvider } from '../../providers/contextProvider';
 import { useContext } from 'react';
 
 function LoginPage() {
+  const {
+    setUsername
+  } = useContext(GlobalProvider)
   
   const {
     inputUsername, 
     inputPassword,
     onLogin
-  } = useLoginHook()
-
+  } = useLoginHook(setUsername)
   return (
     <div className='p-6 sm:p-10 lg:p-20'>
       <main className='flex flex-col lg:flex-row min-w-full h-auto lg:h-[500px] rounded-md shadow-2xl'>
