@@ -1,35 +1,21 @@
 import { AiOutlineUser, AiOutlineMail } from 'react-icons/ai';
 import { PiPasswordThin } from 'react-icons/pi';
-import { useState } from 'react';
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import useRegisterHook from '../../hooks/useRegisterHook';
 
 function RegisterPage() {  
-  const [inputUsername, setInputUsername] = useState('')
-  const [inputEmail, setInputEmail] = useState('')
-  const [inputPassword, setInputPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-  const [hideButton, setHideButton] = useState(false)
 
-    const onRegister = async() => {
-        try {
-            setHideButton(true)
-            await axios.post('http://localhost:5000/usersss', {
-                username: inputUsername, 
-                password: inputPassword, 
-                email: inputEmail
-            })
-            toast.success('Register Success')
-            setInputEmail('')
-            setInputPassword('')
-            setInputUsername('')
-        } catch (error) {
-            toast.error('Something Went Wrong!')
-        } finally {
-          console.log('>>>')
-          setHideButton(false)
-        }
-    }
+  const {
+    inputUsername, 
+    setInputUsername, 
+    inputEmail, 
+    setInputEmail, 
+    inputPassword, 
+    setInputPassword,
+    showPassword, 
+    setShowPassword, 
+    hideButton, 
+    onRegister
+  } = useRegisterHook()
 
   return (
     <div className='p-6 sm:p-10 lg:p-20'>
@@ -79,4 +65,14 @@ function RegisterPage() {
 }
 
 export default RegisterPage;
+
+
+
+
+
+
+
+
+
+
   
