@@ -1,26 +1,34 @@
 import { AiOutlineUser, AiOutlineMail } from 'react-icons/ai';
 import { PiPasswordThin } from 'react-icons/pi';
-import { useRef } from 'react';
-import axios from 'axios';
 import { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-function RegisterPage() {
-  const [inputUsername, setUsername] = useState('')  
-  const [inputPassword, setPassword] = useState('')  
-  const [inputEmail, setEmail] = useState('')
-  const [showPassword, setShowPassword] = useState(false)  
+function RegisterPage() {  
+  const [inputUsername, setInputUsername] = useState('')
+  const [inputEmail, setInputEmail] = useState('')
+  const [inputPassword, setInputPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  const [hideButton, setHideButton] = useState(false)
 
     const onRegister = async() => {
-        // console.log('>>>')
-        // try {
-        //     await axios.post('http://localhost:5000/users', {
-        //         username: inputUsername.current.value, 
-        //         password: inputPassword.current.value, 
-        //         email: inputEmail.current.value
-        //     })
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        try {
+            setHideButton(true)
+            await axios.post('http://localhost:5000/usersss', {
+                username: inputUsername, 
+                password: inputPassword, 
+                email: inputEmail
+            })
+            toast.success('Register Success')
+            setInputEmail('')
+            setInputPassword('')
+            setInputUsername('')
+        } catch (error) {
+            toast.error('Something Went Wrong!')
+        } finally {
+          console.log('>>>')
+          setHideButton(false)
+        }
     }
 
   return (
@@ -34,32 +42,35 @@ function RegisterPage() {
           <div className='w-full flex flex-col gap-3'>
             <label className='w-full input input-bordered flex items-center gap-2'>
               <input
+                value={inputUsername}
                 type='text'
                 className='grow p-2 rounded-md'
                 placeholder='Username'
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => setInputUsername(e.target.value)}
               />
               <AiOutlineUser />
             </label>
             <label className='input input-bordered flex items-center gap-2'>
               <input
-                type={showPassword? 'text' : 'password'}
+                value={inputPassword}
+                type={showPassword === true? 'text' : 'password'}
                 className='grow p-2 rounded-md'
                 placeholder='Password'
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setInputPassword(e.target.value)}
               />
-              <PiPasswordThin onClick={() => setShowPassword(true)} />
+              <PiPasswordThin onClick={() => setShowPassword(!showPassword)} />
             </label>
             <label className='input input-bordered flex items-center gap-2'>
               <input
+                value={inputEmail}
                 type='text'
                 className='grow p-2 rounded-md'
                 placeholder='Email'
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setInputEmail(e.target.value)}
               />
               <AiOutlineMail />
             </label>
-            <button onClick={onRegister} disabled={inputUsername === '' || inputEmail === '' || inputPassword === ''? true : false} className='btn btn-primary w-full'>Register Account</button>
+            <button disabled={(inputUsername === '' || inputPassword === '' || inputEmail === '') || hideButton === true? true : false} onClick={onRegister} className='btn btn-primary w-full'>Register Account</button>
           </div>
         </section>
       </main>
