@@ -5,6 +5,7 @@ import RegisterPage from './pages/register';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/navbar';
+import DashboardPage from './pages/dashboard';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <ToastContainer />
       <Routes>
+        <Route path='/' element={<DashboardPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/register' element={<RegisterPage />} />
       </Routes>

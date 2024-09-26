@@ -8,11 +8,13 @@ export default function Navbar(){
         username 
     } = useContext(GlobalProvider)
     
-    // if(locationPathname.pathname === '/login' || locationPathname.pathname === '/register') return <></>
+    if(locationPathname.pathname === '/login' || locationPathname.pathname === '/register') return <></>
 
     return(
-        <main className='bg-blue-500 text-white py-3'>
-            {username}
+        <main className='bg-blue-800 text-white px-3 py-5'>
+            <h1 className='font-bold'>
+                Hello, {username}!
+            </h1>
         </main>
     )
 }

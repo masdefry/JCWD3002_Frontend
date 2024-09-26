@@ -14,6 +14,18 @@
       "name": "Butter Croissant",
       "price": 25000,
       "imageUrl": "https://sarahsvegankitchen.b-cdn.net/wp-content/uploads/2024/05/Vegan-Croissants-1.jpg"
+    },
+    {
+      "id": "3gb1",
+      "name": "Herb Bread",
+      "price": 55000,
+      "imageUrl": "https://www.allrecipes.com/thmb/xgtD_bOIX2BJdEZWZqapqexR17A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6784-ItalianHerbBread-ddmfs-3x4-81748246-961f5ea2e0324e4182409239cebbdf0d.jpg"
+    },
+    {
+      "id": "cb24",
+      "name": "Peanut Cheese Cake",
+      "price": 35000,
+      "imageUrl": "https://www.tamingtwins.com/wp-content/uploads/2023/06/image-57.jpeg"
     }
   ]
 }
