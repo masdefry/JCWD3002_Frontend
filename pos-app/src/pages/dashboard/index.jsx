@@ -5,7 +5,8 @@ import axios from 'axios';
 
 export default function DashboardPage(){
     const [products, setProducts] = useState([])
-
+    const [cart, setCart] = useState([])
+   
     const onFetchProducts = async() => {
         try {
             const res = await axios.get('http://localhost:5000/products')
@@ -15,10 +16,21 @@ export default function DashboardPage(){
         }
     }
 
+    const onAddToCart = (name, price, qty) => {
+        const currentCart = [...cart]
+        currentCart.push({name, price, qty})
+        setCart(currentCart)
+    }
+
+    const addQtyCart = (index) => {
+        const currentCart = [...cart]
+        currentCart[index].qty += 1
+        setCart(currentCart)
+    }
+
     useEffect(() => {
         onFetchProducts()
     }, [])
-
     return(
         <main className='h-screen grid grid-cols-3 grid-rows-12 p-5 pt-20 gap-3'>
             <section id='left' className='col-[1/3] row-[1/13]  bg-white rounded-xl drop-shadow-xl border border-gray-200'>
@@ -47,7 +59,7 @@ export default function DashboardPage(){
                             {
                                 products.map((product, index) => {
                                     return(
-                                        <ListMenu name={product.name} price={product.price} imageUrl={product.imageUrl} />
+                                        <ListMenu onAddToCart={onAddToCart} name={product.name} price={product.price} imageUrl={product.imageUrl} />
                                     )
                                 })
                             }
@@ -70,7 +82,13 @@ export default function DashboardPage(){
                                     <th>Amount</th>
                                 </tr>
                             </thead>
-                            <ListCheckout />
+                            {
+                                cart.map((product, index) => {
+                                    return(
+                                        <ListCheckout index={index} addQtyCart={addQtyCart} name={product.name} price={product.price} qty={product.qty} />
+                                    )
+                                })
+                            }
                         </table>
                     </div>
                 </div>

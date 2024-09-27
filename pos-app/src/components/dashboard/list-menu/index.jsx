@@ -1,6 +1,6 @@
-export default function ListMenu({name, price, imageUrl}){
+export default function ListMenu({name, price, imageUrl, onAddToCart}){
     return(
-        <div className="flex flex-col w-full border rounded-md">
+        <div className="flex flex-col w-full border rounded-md" onClick={() => onAddToCart(name, price, 1)}>
             <div className="rounded-lg flex drop-shadow-md w-full h-[150px]">
                 <img src={imageUrl} alt="asd" className="rounded-md object-cover" />
             </div>
@@ -9,6 +9,5 @@ export default function ListMenu({name, price, imageUrl}){
                 <div className="text-center ">Rp{price.toLocaleString("id-ID")}</div>
             </div>
         </div>
-
     )
 }
