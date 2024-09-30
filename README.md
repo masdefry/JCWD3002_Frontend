@@ -1,91 +1,28 @@
 Hello, JCWD3002!
 
-- How to Setup React JS with Vite?
+1. How to Install NextJS Latest Version (> Version 13)
 
-            1. Create Project
+                npx create-next-app@latest project-name
 
-                    npm create vite@latest
-            
-            2. Inside Your New Vite Project
+                - Would you like to use TypeScript? No / Yes
 
-                    npm i 
-            
-            3. Execute Vite Project
+                - Would you like to use ESLint? Yes
 
-                    npm run dev
+                - Would you like to use Tailwind CSS? Yes
+ 
+                - Would you like to use `src/` directory? Yes
 
-- How to Setup React Router Dom?
+                - Would you like to use App Router? Yes
 
-            0. Install
+                - Would you like to customize the default import alias (@/*)? Yes
 
-                    npm i react-router-dom@6
+                - What import alias would you like configured? @/*
 
-            1. Import Component `BrowserRouter` at `main.jsx`
+2. How to Run NextJS Project?
 
-                    import { BrowserRouter } from 'react-router-dom'
+                npm run dev
 
-                    createRoot(document.getElementById('root')).render(
-                        <BrowserRouter>
-                                <App />
-                        </BrowserRouter>,
-                    )
-
-
-            2. Import `Routes` and `Route` at `App.jsx`
-                
-                    import Profile from './pages/Profile';
-                    
-                    import Login from './pages/Login';
-
-                    <Routes>
-                        <Route path='/profile' element={<Profile />} />
-                        <Route path='/login' element={<Login />} /> 
-                    </Routes>
-
-- How to Setup Tailwind CSS?
-            
-            https://tailwindcss.com/docs/guides/vite
-
-- How to Setup React Toastify?
-
-                0. Install
-
-                        npm i react-toastify
-
-                1. Put `ToastContainer` Component at `App.jsx'
-
-                        import {ToastContainer} from 'react-toastify';
-
-                        function App(){
-                                return(
-                                        <>
-                                        <ToastContainer />
-                                                <Routes>
-                                                ...
-                                                ...
-                                                ...
-                                                </Routes>
-                                        </>
-                                )
-                        }
-
-                        export default App
-
-                2. Use `toast.success` or `toast.error` or Any toast Method as Modern Alert
-
-                        toast.success('Delete Todo Success!')
-
-- Using JSON-SERVER as Fake API 
-
-                0. Install JSON-SERVER (Install on Global/System Computer)
-
-                    npm i -g json-server
-
-                1. Create New Directory `db` and New File `db.json` Inside Your React Project 
-
-                2. Running JSON-SERVER on Your Terminal CMD. Makesure Your Terminal Already Inside `db` Directory 
-
-                    json-server --watch db.json --port 5000
+3. 
 
 
 
