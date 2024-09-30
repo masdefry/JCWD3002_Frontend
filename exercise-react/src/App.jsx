@@ -7,6 +7,7 @@ import axios from 'axios';
 
 function App() {
   const [todos, setTodos] = useState([])
+  const [indexSelected, setIndexSelected] = useState([])
 
   const onFetchTodo = async() => {
     try {
@@ -18,13 +19,19 @@ function App() {
     }
   }
 
+  const onSelectTodo = (index) => {
+    const currentIndexSelected = [...indexSelected]
+    currentIndexSelected.push(index)
+    setIndexSelected(currentIndexSelected)
+  }
+
   useEffect(() => {
     onFetchTodo()
   }, [])
 
   return (
     <main className='grid grid-cols-3 p-3'>
-      <SectionLeft dataTodos={todos} />
+      <SectionLeft dataTodos={todos} onSelectTodo={onSelectTodo} indexSelected={indexSelected} />
       <section className='flex justify-center items-center'>
         <button className='w-[30%] flex justify-center items-center gap-3 btn bg-red-500 text-white p-3 rounded-md'>
           <IoIosArrowDroprightCircle className='text-xl' />

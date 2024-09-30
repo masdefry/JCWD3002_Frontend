@@ -9,7 +9,6 @@ export default function SectionLeft({dataTodos}){
         <div className='border border-gray-300 p-3 rounded-md flex flex-col gap-3'>
           {
             dataTodos.map((item, index) => {
-              {console.log(item)}
               return(
                 <List todoItem={item.name} background='bg-yellow-500' />
               )
