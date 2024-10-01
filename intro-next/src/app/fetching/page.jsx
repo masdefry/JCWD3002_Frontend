@@ -1,17 +1,17 @@
 // SSR
-const onFetchDataSSR = async() => {
-    try {
-        let res = await fetch('https://66fb763b8583ac93b40bd72f.mockapi.io/purwadhika/comments', {
-            cache: 'no-store'
-        })
+// const onFetchDataSSR = async() => {
+//     try {
+//         let res = await fetch('https://66fb763b8583ac93b40bd72f.mockapi.io/purwadhika/comments', {
+//             cache: 'no-store'
+//         })
         
-        res = await res.json()
+//         res = await res.json()
         
-        return res
-    } catch (error) {
-        console.log(error)
-    }
-}
+//         return res
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
 
 // SSG
 // const onFetchDataSSG = async() => {
@@ -30,9 +30,29 @@ const onFetchDataSSR = async() => {
 //     }
 // }
 
+// ISR
+const onFetchDataISR = async() => {
+    try {
+        let res = await fetch('https://66fb763b8583ac93b40bd72f.mockapi.io/purwadhika/comments', 
+            {
+                cache: 'force-cache', 
+                next: {
+                    revalidate: 10
+                }
+            }
+        )
+        
+        res = await res.json()
+        
+        return res
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export default async function Page(){
 
-    const comments = await onFetchDataSSR()
+    const comments = await onFetchDataISR()
     
     return(
         <>
