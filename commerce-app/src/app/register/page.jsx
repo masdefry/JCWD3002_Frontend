@@ -1,49 +1,21 @@
-Hello, JCWD3002!
+'use client';
 
-1. How to Install NextJS Latest Version (> Version 13)
+import {Formik, Form, Field, ErrorMessage} from 'formik';
+import {registerSchema} from '@/features/register/schemas/registerSchema';
 
-                npx create-next-app@latest project-name
-
-                - Would you like to use TypeScript? No / Yes
-
-                - Would you like to use ESLint? Yes
-
-                - Would you like to use Tailwind CSS? Yes
- 
-                - Would you like to use `src/` directory? Yes
-
-                - Would you like to use App Router? Yes
-
-                - Would you like to customize the default import alias (@/*)? Yes
-
-                - What import alias would you like configured? @/*
-
-2. How to Run NextJS Project?
-
-                npm run dev
-
-3. How to Create Form Validation using Formik & Yup?
-
-        - Install Dependency
-
-                npm i formik yup
-        
-        - Create Validation Schema
-
-                import * as Yup from 'yup';
-
-                export const registerSchema = Yup.object().shape({
-                    username: Yup.string().required('Username must be filled'),
-                    email:Yup.string().email('Email invalid').required('Email must be filled'), 
-                    password: Yup.string().required('Password must be filled')
-                })
-
-        - Wrap Your Input and Submit Button with Formik Component. Also Import Your 
-          Validation Schema 
-
+export default function RegisterPage(){
+    return(
+        <main>
+            <section className='flex flex-col items-center gap-3 p-10'>
+                <h1 className='font-bold text-3xl'>
+                    Create Account
+                </h1>
+                <hr className='w-[75px] border border-gray-900 border-3' />
                 <Formik
                     initialValues={{
-                        username: ''
+                        username: '', 
+                        email: '', 
+                        password: ''
                     }}
 
                     validationSchema={registerSchema}
@@ -69,7 +41,11 @@ Hello, JCWD3002!
                             Create Account 
                         </button>
                     </Form>
-                </Formik>  
-
-
-
+                </Formik>
+                <h1 className='py-10'>
+                    Already have account? Login here 
+                </h1>
+            </section>
+        </main>
+    )
+}
