@@ -13,7 +13,10 @@ const persistedReducer = persistReducer(persistConfig, authReducer)
 export const reduxStore = configureStore({
     reducer: {
         auth: persistedReducer
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false
+    })
 })
 
 export const persist = persistStore(reduxStore)
