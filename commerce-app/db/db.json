@@ -1,0 +1,148 @@
+{
+  "products": [
+    {
+      "id": "1ab2",
+      "name": "Legend Tiny On White",
+      "price": 82500,
+      "color": "Black",
+      "sizes": [
+        {
+          "size": "M",
+          "stock": 10
+        },
+        {
+          "size": "L",
+          "stock": 20
+        }
+      ],
+      "images": [
+        "https://www.screamous.com/cdn/shop/products/LGS-TSR-252B-a_720x.jpg?v=1617213244",
+        "https://www.screamous.com/cdn/shop/products/LGS-TSR-252B-c_720x.jpg?v=1617213244"
+      ]
+    },
+    {
+      "id": "ba12",
+      "name": "T-Shirt CROWNS BLACK",
+      "price": 85000,
+      "color": "Black",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 1
+        },
+        {
+          "size": "M",
+          "stock": 3
+        },
+        {
+          "size": "L",
+          "stock": 3
+        }
+      ],
+      "images": [
+        "https://www.screamous.com/cdn/shop/products/sg-11134201-23010-ptkj40eogjmv8f_720x.jpg?v=1675237484",
+        "https://www.screamous.com/cdn/shop/products/sg-11134201-23010-dldpujtlgjmve5_720x.jpg?v=1675237473"
+      ]
+    },
+    {
+      "id": "hj32",
+      "name": "Basic Crown V Line",
+      "price": 79000,
+      "color": "Red",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 5
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 10
+        }
+      ],
+      "images": [
+        "https://www.screamous.com/cdn/shop/products/CRN-TSR-08B_720x.jpg?v=1658913091",
+        "https://www.screamous.com/cdn/shop/products/CRN-TSR-08B-2_720x.jpg?v=1658913091"
+      ]
+    },
+    {
+      "id": "3xyz",
+      "name": "Jacket Varsity BASEJAMS NAVY MOONSTRUCK",
+      "price": 325000,
+      "color": "Navy Moonstruck",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 5
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 10
+        }
+      ],
+      "images": [
+        "https://www.screamous.com/cdn/shop/files/id-11134207-7r98s-lmejkxgjavmpb8_720x.jpg?v=1696331941",
+        "https://www.screamous.com/cdn/shop/files/id-11134207-7r98v-lmejkxgj82vi6c_720x.jpg?v=1696331916"
+      ]
+    },
+    {
+      "id": "tw21",
+      "name": "Sweater Halfzip FRANKLIN FOREST GREEN",
+      "price": 230000,
+      "color": "Forest Green",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 5
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 10
+        }
+      ],
+      "images": [
+        "https://www.screamous.com/cdn/shop/files/id-11134207-7r98s-llde7ggy29ux48_720x.jpg?v=1694083829",
+        "https://www.screamous.com/cdn/shop/files/id-11134207-7r98r-lldb8kv2gcjoff_720x.jpg?v=1694083821"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "abc1",
+      "username": "ryan01",
+      "email": "ryan01@gmail.com",
+      "password": "abc123",
+      "role": "USER"
+    },
+    {
+      "id": "eca6",
+      "username": "ryan06",
+      "email": "ryan06@gmail.com",
+      "password": "abc123",
+      "role": "USER"
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import TanstackProvider from "@/providers/TanstackProvider";
+import Navbar from "@/components/cores/Navbar";
+import ReduxProvider from "@/providers/ReduxProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +26,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <TanstackProvider>
+          <ReduxProvider>
+              <Navbar />
+              {children}
+          </ReduxProvider>
+        </TanstackProvider>
       </body>
     </html>
   );
