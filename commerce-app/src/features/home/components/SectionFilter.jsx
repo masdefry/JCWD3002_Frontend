@@ -7,17 +7,18 @@ import { useSearchParams } from "next/navigation";
 export default function SectionFilter(){
     const router = useRouter()
     const searchParams = useSearchParams()
-    const params = new URLSearchParams(searchParams);
-    
+    const params = new URLSearchParams(searchParams); {sort: 'ascending'} {}
+
     const debounced = useDebouncedCallback(
       (value) => {
         let currentUrl = '?'
 
-        params.set('search', value)
+        params.set('search', value) // {search: 'abc'}
         for(let [key, value] of params){
-          currentUrl += `${key}=${value}&`
+          currentUrl += `${key}=${value}&` // ?search=abc&
         }
-
+        
+        // Supaya & Not Include
         if(currentUrl[currentUrl.length-1] === '&') currentUrl = currentUrl.slice(0, currentUrl.length-1)
         
         router.push(currentUrl)
@@ -27,8 +28,17 @@ export default function SectionFilter(){
     );
 
     const onSortingProducts = (value) => {
-      router.push(`?sort=${value}`)
-      router.refresh()
+      let currentUrl = '?'
+
+        params.set('sort', value)
+        for(let [key, value] of params){
+          currentUrl += `${key}=${value}&`
+        }
+
+        if(currentUrl[currentUrl.length-1] === '&') currentUrl = currentUrl.slice(0, currentUrl.length-1)
+        
+        router.push(currentUrl)
+        router.refresh()
     }
 
     return(

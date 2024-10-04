@@ -1,5 +1,6 @@
 import SectionFilter from '@/features/home/components/SectionFilter';
 import CardProduct from '@/features/home/components/CardProduct';
+import Link from 'next/link'
 
 const onFetchProduct = async({search, sort}) => {
   try{
@@ -40,7 +41,9 @@ export default async function Home({searchParams}) {
         {
           products.map((product, index) => {
             return(
-              <CardProduct name={product.name} price={product.price} mainImage={product.images[0]} key={index} />
+              <Link href={`/product/detail/${product.name.split(' ').join('-')}-${product.id}`} key={index}>
+                <CardProduct name={product.name} price={product.price} mainImage={product.images[0]} />
+              </Link>
             )
           })
         }
