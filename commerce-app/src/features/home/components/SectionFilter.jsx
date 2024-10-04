@@ -2,13 +2,25 @@
 import { useRouter } from "next/navigation";
 import {useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce';
+import { useSearchParams } from "next/navigation";
 
 export default function SectionFilter(){
     const router = useRouter()
-
+    const searchParams = useSearchParams()
+    const params = new URLSearchParams(searchParams);
+    
     const debounced = useDebouncedCallback(
       (value) => {
-        router.push(`?search=${value}`)
+        let currentUrl = '?'
+
+        params.set('search', value)
+        for(let [key, value] of params){
+          currentUrl += `${key}=${value}&`
+        }
+
+        if(currentUrl[currentUrl.length-1] === '&') currentUrl = currentUrl.slice(0, currentUrl.length-1)
+        
+        router.push(currentUrl)
         router.refresh()
       },
       2000
