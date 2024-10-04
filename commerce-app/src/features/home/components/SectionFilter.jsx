@@ -14,6 +14,11 @@ export default function SectionFilter(){
       2000
     );
 
+    const onSortingProducts = (value) => {
+      router.push(`?sort=${value}`)
+      router.refresh()
+    }
+
     return(
         <section className='py-5 flex flex-col lg:flex-row gap-3'>
           <div className='w-full'>
@@ -32,10 +37,10 @@ export default function SectionFilter(){
             </label>
           </div>
           <div className='w-full lg:w-auto'>
-            <select className="select select-bordered w-full max-w-xs">
+            <select onChange={(e) => onSortingProducts(e.target.value)} className="select select-bordered w-full max-w-xs">
               <option disabled selected>Sorting</option>
-              <option>Low - High</option>
-              <option>High - Low</option>
+              <option value='ascending'>Low - High</option>
+              <option value='descending'>High - Low</option>
             </select>
           </div>
       </section>

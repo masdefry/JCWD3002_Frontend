@@ -1,7 +1,7 @@
 import SectionFilter from '@/features/home/components/SectionFilter';
 import CardProduct from '@/features/home/components/CardProduct';
 
-const onFetchProduct = async(search) => {
+const onFetchProduct = async({search, sort}) => {
   try{
     let url = 'http://localhost:5000/products'
     if(search){
@@ -12,7 +12,13 @@ const onFetchProduct = async(search) => {
       cache: 'no-store'
     })
 
-    res = await res.json()
+    res = await res.json() // [{}]
+
+    if(sort === 'ascending'){
+      res.sort((a, b) => a.price - b.price)
+    }else if(sort === 'descending'){
+      res.sort((a, b) => b.price - a.price)
+    }
 
     return res
   }catch(error){
@@ -21,8 +27,8 @@ const onFetchProduct = async(search) => {
 }
 
 export default async function Home({searchParams}) {
-  const products = await onFetchProduct(searchParams.search)
-  console.log(products)
+
+  const products = await onFetchProduct({search: searchParams.search, sort: searchParams.sort})
 
   return (
     <main className='py-10 px-4 md:px-8 lg:px-16 xl:px-32'>
