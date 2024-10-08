@@ -73,3 +73,9 @@ export default function Page({params}) {
     </main>
   );
 }
+
+
+
+Exercise Weekend:
+1. Disable Button `Add to Cart` Jika Belum Login
+2. Apabila User Sudah Pernah Login, Tidak Boleh Mengakses Halaman Login/Register

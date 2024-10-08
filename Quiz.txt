@@ -1,0 +1,99 @@
+1. What is commonly used to provide interactivity on web pages?
+a. Javascript
+b. HTML
+c. CSS
+d. Formik 
+
+2. The technology commonly used to defined the structure and content of web pages is ?
+a. Javascript
+b. HTML
+c. CSS
+d. Formik 
+
+3. What is CSS Flexbox and how is it used to layout elements on a web page?
+a. Flexbox is a method used for form validation in CSS
+b. Flexbox is a method for arranging the layout elements in one dimension
+c. Flexbox is a method for positioning element layout such as fixed, etc
+d. Flexbox is a method for arranging the layout elements in two dimension
+
+4. How do you create a new component in React?
+a. Adding new HTML element in the HTML file that represents the component
+b. By using `new Component()` inside the `render` function
+c. Adding the method `createComponent()` within the existing component
+d. Creating a new Javascript file and writing JSX code for that component
+
+5. How do you parse props to another component in React?
+a. By using class to initialize props within the component
+b. Include props as attribute in the JSX element when render the componen
+c. It is not possible to pass props to component in React
+d. By directly inserting props into the HTML markup within the component
+
+6. What is meant by props drilling in the context of React?
+a. Props drilling is a way to organize prop data in a structured
+b. The process of passing props data through multiple layer of components
+c. Method for passing props from child component to parent component 
+d. Props drilling is a technique or method for passing props in React
+
+7. What tool does React use to compile JSX ?
+a. React Router DOM
+b. Babel 
+c. Virtual DOM 
+d. NodeJS
+
+8. How do React components interact with state managed by redux?
+a. React component cannot interact with redux state
+b. React component can change state by using setState on redux
+c. React component dispatch action to redux, then updating the state
+d. All answer is incorrect
+
+9. In a Next JS App Router, can we easily write static metadata on ?
+a. page.js 
+b. layout.js
+c. index.js 
+d. metadata.js 
+
+10. What is meant by Virtual DOM in the context of react ?
+a. A javascript library used to facilitate creating virtual animation
+b. Representation of  actual DOM used by React to improve render process
+c. Component in React use to replace structure in the functional componen
+d. A DOM element used to render components in React 
+
+11. What is wrong with the code ?
+
+1.png
+
+a. The name of component different with the file name
+b. You need to define the page as client side using "use client"
+c. The use of useState must be accompanied by useEffect in that component
+d. `page.js` file not detected by NextJS. You must change to be index.js
+
+12. Whats is the main difference between useMemo and useState in react ?
+a. useState to manipulate DOM element, while useMemo  to memoized value
+b. There is no difference between them, and they can be used interchanged
+c. useState to manage component state, useMemo  to  compute memoize value
+d. All answer is incorrect
+
+13. What is useRef in react?
+a. useRef is a hook in react used to create actions and manipulate state
+b. useRef is a hook in react used to manage component state
+c. useRef is a hook in react used to access and manipulate DOM elements
+d. useRef is a hook in react used to convert a functional component 
+
+14. Consider the component below. What is the default color of the Icon component?
+
+2.png
+
+a. Black 
+b. Red
+c. There is no default value
+d. It returns an error code in the component
+
+15. What the problem from this code?
+
+carbon.png
+
+a. You put data on variable, so the React will not show the item of map
+b. You not return the result from map inside the function
+c. You not wrap the container of component using React Fragment
+d. You not split the variable data into custom hook
+
