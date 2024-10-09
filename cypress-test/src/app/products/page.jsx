@@ -1,21 +1,29 @@
-const onFetchProducts = async() => {
-    try {
-        let res = await fetch('http://localhost:5000/products')
-        res = await res.json()
+'use client';
 
-        return res
-    } catch (error) {
-        console.log(error)
+import { useEffect, useState } from "react";
+import axios from 'axios';
+
+export default function ProductsPage(){
+    const [products, setProducts] = useState([])
+
+    const onFetchProducts = async() => {
+        try {
+            let res = await axios.get('http://localhost:5000/products')
+    
+            setProducts(res.data)
+        } catch (error) {
+            console.log(error)
+        }
     }
-}
 
-export default async function ProductsPage(){
-    const products = await onFetchProducts()
+    useEffect(() => {
+        onFetchProducts()
+    }, [])
 
     return(
         <main>
-            <section name='form-section'></section>
-            <section name='display-section'>
+            <section name='form-section' data-test='form-section'></section>
+            <section name='display-section' data-test='display-section'>
                 <table>
                     <thead>
                         <tr>

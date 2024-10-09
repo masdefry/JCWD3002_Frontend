@@ -1,68 +1,123 @@
 1. Why is `useReducer` often used for state management instead of `useState` in more complex situations?
 a. useState separates state updates from the component, making it easier to manage complex state
-b. useReducer separates state updates from the component, making it easier to manage complex state
+x. useReducer separates state updates from the component, making it easier to manage complex state
 c. useReducer is simpler than useState in its implementation
 d. No correct answer 
 
-2. useReducer is simpler than useState in its implementation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. How do React components interact with state managed by redux?
 a. React component cannot interact with redux state
 b. React component dispatch actions to redux, which are then processed views to update the state
-c. React component dispatch actions to redux, which are then processed views to update the state
+x. React component dispatch actions to redux, which then updates the state.
 d. React component can change state by using setState on redux
+
+
+
+
 
 3. What is middleware in redux, and how are they used?
 a. Middleware is a component in redux that efficiently connects state to react components
 b. Middleware is a function used by redux to optimize rendering views of components in react
-c. Middleware is a method used to process actions before they reach the reducers in redux, such as logging or sending data to a server
+x. Middleware is a method used to process actions before they reach the reducers in redux, such as logging 
+or sending data to a server
 d. No correct answer 
 
+
+
+
+
 4. Why should you avoid copying prop values into the component state?
-a. Because it would lead to duplicate instances with different state, while state synchronization remains intact but it consume a lot of memory
-b. Because it would create two instance with the same state, which could lead to state desynchronization
+a. Because it would lead to duplicate instances with different state, 
+while state synchronization remains intact but it consume a lot of memory
+x. Because it would create two instance with the same state, which could lead to state desynchronization
 c. Because props values cannot be stored by the state in that component
 d. No correct answer 
 
+
+
+
+
+
 5. What is Server Side Rendering (SSR) in react, and what are its benefits?
-a. SSR is a method for rendering views on the server side before sending them to the client, which allows the application to load faster and have better SEO
+x. SSR is a method for rendering views on the server side before sending them to the client, 
+which allows the application to load faster and have better SEO
 b. SSR is a method for managing global state in react
-c. SSR is a method for rendering only animated viewsin react before sending them to the server, which allow the applications to load faster and have better SEO
-d. SSR is a method for rendering views only on the client side before sending them to the server, which allows the application to load faster and have better SEO
+c. SSR is a method for rendering only animated viewsin react before sending them to the server, 
+which allow the applications to load faster and have better SEO
+d. SSR is a method for rendering views only on the client side before sending them to the server, 
+which allows the application to load faster and have better SEO
+
+
+
+
 
 6. Which of the following statements is correct regarding page navigation in a Next JS project?
 a. There is no correct statement.
-b. Using Link from next/link is good for SEO performance because page transition links cannot be detected by crawlers.
-c. Using Link from next/link is very good for SEO performance because page transition links can be detected by crawlers and have SPA behavior.
-d. router.push is used for page navigation, which is very good for SEO performance because page transition links can be detected by crawlers and have SPA behavior
+b. Using Link from next/link is good for SEO performance because page transition links cannot be detected 
+by crawlers.
+x. Using Link from next/link is very good for SEO performance because page transition links can be detected 
+by crawlers and have SPA behavior.
+d. router.push is used for page navigation, which is very good for SEO performance because page transition 
+links can be detected by crawlers and have SPA behavior
+
+
+
 
 7. Here is a functional component in react. Complete this code with the correct way to manage state and display the state value when the button is pressed.
 
 Soal-07.png
 
-a. Use state to initialized the count state and setState, and use setState to update the state when the button is pressed.
-b. Use this.state to initialize the count state and this.setState to update the state when the button is pressed
+a. Use state to initialized the count state and setState, 
+and use setState to update the state when the button is pressed.
+b. Use this.state to initialize the count state and this.setState to update the state 
+when the button is pressed
 c. State is not required in functional component
-d. Use useState to initialize the count state and setCount, and use setCount to update the state when the button is pressed
+x. Use useState to initialize the count state and setCount, 
+and use setCount to update the state when the button is pressed
+
+
 
 8. You have a functional component in react that has several hooks
 
 Soal-08.png 
 
-a. In useEffect, you will send a HTTP request using fetch to fetch data from the server and populate data with the response. When the data is received, you will change the loading value to false
+x. In useEffect, you will send a HTTP request using fetch to fetch data from the server 
+and populate data with the response. When the data is received, you will change the loading value to false
 b. You can directly use data and loading to display data in the UI without needing to use useEffect
-c. You should add and create a new state inside useEffect to manage data and loading because you cannot use useState outsidethe return. After that, make an HTTP request directly inside useEffect.
-d. You should initialize data and loading with fake data from the start, and then update them when the actual data arrives.
+c. You should add and create a new state inside useEffect to manage data 
+and loading because you cannot use useState outsidethe return. After that, make an HTTP request directly inside useEffect.
+d. You should initialize data and loading with fake data from the start, 
+and then update them when the actual data arrives.
 
 9. You want to access DOM elements in your react component. How would you use the useRef hook to achieve this?
 
 Soal-09.png 
 
-a. You can use elementRef.style.color = 'blue' in the handleClick functon to change the background color of the div element.
-b. You can use elementRef.style.backgroundColor = 'blue' in the handleClick function to change the background color of the div element
-c. You can use elementRef.current.color = 'blue' in the handleClick function to change the background color of the div element.
-d. You can use elementRef.current.style.backgroundColor = 'blue' in the handleClick function to change the background color of the div element.
+a. You can use elementRef.style.color = 'blue' in the handleClick functon 
+to change the background color of the div element.
+b. You can use elementRef.style.backgroundColor = 'blue' in the handleClick function 
+to change the background color of the div element
+c. You can use elementRef.current.color = 'blue' in the handleClick function 
+to change the background color of the div element.
+x. You can use elementRef.current.style.backgroundColor = 'blue' in the handleClick function 
+to change the background color of the div element.
+
 
 10. What is the main function of createSlice in redux toolkit, and why is it useful?
 a. createSlice is used to create a slice that encompasses actions in redux in one place
 b. createSlice is a method for creating an instance of a slice or redux store that helps with reducer work.
-c. createSlice is used to create a slice that encompasses reducer, action, and state updates in one place.
+x. createSlice is used to create a slice that encompasses reducer, action, and state updates in one place.
 d. There is no correct answer.
